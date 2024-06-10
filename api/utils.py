@@ -1,9 +1,10 @@
 import  os
 import requests
+from django.conf import settings
 
-
-def send_message(message):
-    api_key = 'sk-proj-39ERqV03oBnytTlkj27DT3BlbkFJLgvF4HD8zoL5xOVMkYUQ'
+def send_message(message): 
+    api_key = settings.OPENAI_API_KEY
+    print(api_key)
     if api_key is None:
         raise ValueError("The OPENAI_API_KEY environment variable is not set")
 
